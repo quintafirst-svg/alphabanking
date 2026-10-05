@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | AlphaBanking</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      background:
+        linear-gradient(rgba(5,25,60,.88), rgba(5,25,60,.88)),
+        url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    }
+
+    .box {
+      background: white;
+      width: 100%;
+      max-width: 500px;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      color: #0a4da8;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #14284d;
+    }
+
+    .intro {
+      text-align: center;
+      color: #667085;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 7px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #d5dbe5;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 25px;
+      border: none;
+      border-radius: 7px;
+      background: #0a4da8;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .notice {
+      background: #f3f7fc;
+      padding: 12px;
+      border-radius: 7px;
+      margin-top: 18px;
+      font-size: 13px;
+      color: #536174;
+    }
+
+    .bottom {
+      text-align: center;
+      margin-top: 20px;
+      color: #667085;
+    }
+
+    .bottom a {
+      color: #0a4da8;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+
+    <div class="logo">AlphaBanking</div>
+
+    <h1>Create Your Account</h1>
+
+    <p class="intro">
+      Get started with your AlphaBanking account.
+    </p>
+
+    <form id="registerForm">
+
+      <label>First Name</label>
+      <input type="text" required>
+
+      <label>Last Name</label>
+      <input type="text" required>
+
+      <label>Email Address</label>
+      <input type="email" required>
+
+      <label>Phone Number</label>
+      <input type="tel" required>
+
+      <label>Password</label>
+      <input type="password" minlength="8" required>
+
+      <label>Confirm Password</label>
+      <input type="password" minlength="8" required>
+
+      <button type="submit">
+        Create Account
+      </button>
+
+    </form>
+
+    <div class="notice">
+      For security, this registration page does not request
+      card numbers, CVV, PINs, or online-banking passwords.
+    </div>
+
+    <div class="bottom">
+      Already have an account?
+      <a href="login.html">Login</a>
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      alert(
+        "Your registration form was submitted. " +
+        "Secure account creation will be connected to the backend."
+      );
+    });
+  </script>
+
+</body>
+</html>
