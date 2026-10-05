@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AlphaBanking | Financial Services</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      color: #172033;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: #071d49;
+      color: white;
+      padding: 10px 6%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 6%;
+      background: white;
+      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: #0a4da8;
+    }
+
+    .logo span {
+      color: #111d35;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #25324a;
+      font-weight: 600;
+    }
+
+    .login {
+      background: #0a4da8;
+      color: white !important;
+      padding: 11px 20px;
+      border-radius: 7px;
+    }
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      padding: 70px 6%;
+      background:
+        linear-gradient(90deg, rgba(3,22,55,.95), rgba(3,22,55,.55)),
+        url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #e5ebf5;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .primary,
+    .secondary {
+      padding: 15px 25px;
+      border-radius: 7px;
+      font-weight: bold;
+    }
+
+    .primary {
+      background: #1769d1;
+      color: white;
+    }
+
+    .secondary {
+      border: 1px solid white;
+      color: white;
+    }
+
+    .intro {
+      padding: 45px 6%;
+      text-align: center;
+      background: #f5f8fc;
+    }
+
+    section {
+      padding: 80px 6%;
+    }
+
+    .title {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
+
+    .title h2 {
+      font-size: 40px;
+      color: #10244a;
+      margin-bottom: 12px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      overflow: hidden;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(15,35,70,.09);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 25px;
+    }
+
+    .card h3 {
+      color: #0a4da8;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .about {
+      background: #f4f7fb;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 16px;
+    }
+
+    .about h2 {
+      font-size: 42px;
+      color: #10244a;
+      margin-bottom: 20px;
+    }
+
+    .check {
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    .stats {
+      background: #071d49;
+      color: white;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      gap: 25px;
+    }
+
+    .stat h3 {
+      font-size: 38px;
+    }
+
+    .support {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .support img {
+      width: 100%;
+      border-radius: 16px;
+    }
+
+    .support-box {
+      background: #f4f7fb;
+      padding: 35px;
+      border-radius: 15px;
+    }
+
+    .support-box h2 {
+      color: #10244a;
+      margin-bottom: 15px;
+    }
+
+    .contact {
+      text-align: center;
+      background: #f5f8fc;
+    }
+
+    footer {
+      background: #061936;
+      color: white;
+      padding: 60px 6% 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    footer a {
+      display: block;
+      color: #cbd5e5;
+      margin: 8px 0;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.15);
+      margin-top: 40px;
+      padding-top: 20px;
+      text-align: center;
+      color: #aebbd0;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: #25D366;
+      color: white;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      z-index: 1000;
+    }
+
+    @media(max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .cards,
+      .about-grid,
+      .support,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width: 500px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div>Customer Care Available</div>
+    <div>WhatsApp: +1 (956) 256-2961</div>
+  </div>
+
+  <nav>
+    <div class="logo">
+      Alpha<span>Banking</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="#personal">Personal</a>
+      <a href="#business">Business</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="login.html" class="login">Login</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>Banking Designed Around Your Future.</h1>
+
+      <p>
+        Modern financial services designed to help individuals
+        and businesses manage their financial needs with confidence.
+      </p>
+
+      <div class="buttons">
+        <a href="register.html" class="primary">
+          Get Started
+        </a>
+
+        <a href="#services" class="secondary">
+          Explore Services
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <div class="intro">
+    <h2>Financial Services Built Around You</h2>
+    <p>
+      Convenient tools and customer support for your financial needs.
+    </p>
+  </div>
+
+  <section id="services">
+
+    <div class="title">
+      <h2>Our Services</h2>
+      <p>
+        Explore our personal and business financial-service options.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card" id="personal">
+
+        <img
+          src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1000&q=80"
+          alt="Personal financial services"
+        >
+
+        <div class="card-content">
+          <h3>Personal Banking</h3>
+
+          <p>
+            Convenient financial tools and support for everyday
+            personal financial needs.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="card" id="business">
+
+        <img
+          src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80"
+          alt="Business financial services"
+        >
+
+        <div class="card-content">
+          <h3>Business Banking</h3>
+
+          <p>
+            Financial-service solutions designed for businesses
+            and entrepreneurs.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1556742111-a301076d9d18?auto=format&fit=crop&w=1000&q=80"
+          alt="Digital financial services"
+        >
+
+        <div class="card-content">
+          <h3>Financial Solutions</h3>
+
+          <p>
+            Explore options designed around different financial
+            goals and needs.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="about" id="about">
+
+    <div class="about-grid">
+
+      <img
+        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80"
+        alt="Financial services team"
+      >
+
+      <div>
+
+        <h2>Modern Financial Services. Personal Support.</h2>
+
+        <p>
+          AlphaBanking is designed around a simple idea:
+          financial services should be convenient, understandable,
+          and accessible.
+        </p>
+
+        <p class="check">✓ Digital-first experience</p>
+        <p class="check">✓ Customer-focused support</p>
+        <p class="check">✓ Personal and business solutions</p>
+        <p class="check">✓ Secure account experience</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="stats">
+
+    <div class="stat">
+      <h3>24/7</h3>
+      <p>Digital Access</p>
+    </div>
+
+    <div class="stat">
+      <h3>Secure</h3>
+      <p>Account Experience</p>
+    </div>
+
+    <div class="stat">
+      <h3>Personal</h3>
+      <p>Customer Support</p>
+    </div>
+
+    <div class="stat">
+      <h3>Digital</h3>
+      <p>Financial Tools</p>
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="support">
+
+      <img
+        src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80"
+        alt="Customer support"
+      >
+
+      <div class="support-box">
+
+        <h2>Need Help?</h2>
+
+        <p>
+          Contact AlphaBanking customer care for assistance
+          with your account and services.
+        </p>
+
+        <br>
+
+        <strong>WhatsApp Customer Care</strong>
+
+        <p>+1 (956) 256-2961</p>
+
+        <br>
+
+        <a
+          href="https://wa.me/19562562961"
+          target="_blank"
+          class="primary"
+        >
+          Contact Us
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="contact" id="contact">
+
+    <div class="title">
+
+      <h2>Contact AlphaBanking</h2>
+
+      <p>
+        Have a question? Our customer-care team can assist you.
+      </p>
+
+      <br>
+
+      <p>
+        <strong>WhatsApp:</strong> +1 (956) 256-2961
+      </p>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>AlphaBanking</h3>
+
+        <p>
+          Modern financial services designed around individuals
+          and businesses.
+        </p>
+      </div>
+
+      <div>
+        <h3>Services</h3>
+
+        <a href="#personal">Personal Banking</a>
+        <a href="#business">Business Banking</a>
+        <a href="#services">Financial Services</a>
+      </div>
+
+      <div>
+        <h3>Company</h3>
+
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div>
+        <h3>Account</h3>
+
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 AlphaBanking. All rights reserved.
+    </div>
+
+  </footer>
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/19562562961"
+    target="_blank"
+  >
+    WA
+  </a>
+
+</body>
+</html>
